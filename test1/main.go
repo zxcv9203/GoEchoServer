@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func handleConn(c net.Conn) {
+func handleFT(c net.Conn) {
 	defer c.Close()
 	for {
 		_, err := io.WriteString(c, "42\n")
@@ -29,6 +29,6 @@ func main() {
 			log.Print(err)
 			continue
 		}
-		handleConn(conn)
+		handleFT(conn)
 	}
 }
